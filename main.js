@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron/main');
 const path = require('node:path');
+const { startServer } = require('./Backend');
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -16,8 +17,9 @@ function createWindow () {
   // win.loadURL('http://localhost:3000')
 }
 
-app.whenReady().then(() => {
-  createWindow()
+app.whenReady().then(async () => {
+  await startServer(); // starting the server when electron is ready.
+  createWindow();
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {

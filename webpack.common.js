@@ -44,12 +44,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'], // Resolve .js and .jsx extensions automatically
   },
-//   plugins: [
-//     new HtmlWebpackPlugin({
-//       template: './public/index.html', // The HTML template to inject your React app
-//       inject: true, // Injects assets into the HTML
-//     }),
-//   ],
+
   output: {
     filename: 'index.js', // Separate bundles for main and renderer
     path: path.resolve(__dirname, 'build'),
